@@ -1,0 +1,108 @@
+version: 2
+
+models:
+  - name: raw_sale
+    description: "A table representing raw sales data."
+    columns:
+      - name: sale_id
+        description: "The unique identifier for each sale."
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "The unique identifier for each sale order."
+        tests:
+          - not_null
+      - name: customer_id
+        description: "The unique identifier for each customer."
+        tests:
+          - not_null
+      - name: product_id
+        description: "The unique identifier for each product."
+        tests:
+          - not_null
+      - name: quantity
+        description: "The quantity of products sold in each sale."
+        tests:
+          - not_null
+      - name: price
+        description: "The price of the product for the sale."
+        tests:
+          - not_null
+      - name: order_date
+        description: "The date when the order was placed."
+        tests:
+          - not_null
+
+  - name: raw_user
+    description: "A table representing user data."
+    columns:
+      - name: user_id
+        description: "The unique identifier for each user."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('raw_user')
+              field: user_id
+      - name: name
+        description: "The name of the user."
+      - name: username
+        description: "The username of the user."
+        tests:
+          - unique
+      - name: email
+        description: "The email of the user."
+        tests:
+          - unique
+      - name: phone
+        description: "The phone number of the user."
+      - name: website
+        description: "The website of the user."
+      - name: street
+        description: "The street part of the user's address."
+      - name: suite
+        description: "The suite part of the user's address."
+      - name: city
+        description: "The city part of the user's address."
+      - name: zipcode
+        description: "The zipcode part of the user's address."
+      - name: lat
+        description: "The latitude part of the user's geolocation address."
+      - name: lng
+        description: "The longitude part of the user's geolocation address."
+      - name: company_name
+        description: "The name of the user's company."
+      - name: catchPhrase
+        description: "The catchphrase of the user's company."
+      - name: bs
+        description: "The 'bs' field of the user's company, representing the nature of the business."
+
+  - name: raw_weather
+    description: "A table representing weather data."
+    columns:
+      - name: weather_id
+        description: "A surrogate key generated for each weather data point."
+        tests:
+          - unique
+          - not_null
+      - name: weather_lat
+        description: "The latitude where the weather data was recorded."
+        tests:
+          - not_null
+      - name: weather_lng
+        description: "The longitude where the weather data was recorded."
+        tests:
+          - not_null
+      - name: weather_date
+        description: "The date when the weather data was recorded."
+        tests:
+          - not_null
+      - name: weather_temperature
+        description: "The temperature recorded."
+        tests:
+          - not_null
+      - name: weather_conditions
+        description: "The conditions of the weather."
+        tests:
+          - not_null

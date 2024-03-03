@@ -1,0 +1,35 @@
+sources:
+- description: Dataframes Mage upstream blocks
+  loader: mage
+  name: mage_demo
+  schema: dbt_demo
+  tables:
+  - description: Dataframe for block `load_user_data` of the `sales_pipeline` mage
+      pipeline.
+    identifier: mage_sales_pipeline_load_user_data
+    meta:
+      block_uuid: load_user_data
+      pipeline_uuid: sales_pipeline
+    name: sales_pipeline_load_user_data
+  - description: Dataframe for block `load_sales_data` of the `sales_pipeline` mage
+      pipeline.
+    identifier: mage_sales_pipeline_load_sales_data
+    meta:
+      block_uuid: load_sales_data
+      pipeline_uuid: sales_pipeline
+    name: sales_pipeline_load_sales_data
+  - description: Dataframe for block `prepare_weather_data` of the `sales_pipeline`
+      mage pipeline.
+    identifier: mage_sales_pipeline_prepare_weather_data
+    meta:
+      block_uuid: prepare_weather_data
+      pipeline_uuid: sales_pipeline
+    name: sales_pipeline_prepare_weather_data
+  - description: Dataframe for block `load_top_selling_products` of the `sales_reporting_and_visualization`
+      mage pipeline.
+    identifier: mage_sales_reporting_and_visualization_load_top_selling_products
+    meta:
+      block_uuid: load_top_selling_products
+      pipeline_uuid: sales_reporting_and_visualization
+    name: sales_reporting_and_visualization_load_top_selling_products
+version: 2

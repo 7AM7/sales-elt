@@ -1,0 +1,443 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/total_sales_per_customer.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/total_sales_per_customer.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_total_sales_per_customer
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/total_sales_per_customer
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/total_sales_per_customer
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_total_sales_per_customer
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/total_sales_per_customer
+  uuid: load_total_sales_per_customer
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/weekly_sales_per_customer.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/weekly_sales_per_customer.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_weekly_sales_per_customer
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/weekly_sales_per_customer
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/weekly_sales_per_customer
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_weekly_sales_per_customer
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/weekly_sales_per_customer
+  uuid: load_weekly_sales_per_customer
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/average_order_quantity_per_product.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/average_order_quantity_per_product.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_average_order_quantity_per_product
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/average_order_quantity_per_product
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/average_order_quantity_per_product
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_average_order_quantity_per_product
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/average_order_quantity_per_product
+  uuid: load_average_order_quantity_per_product
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/top_selling_products.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/top_selling_products.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_top_selling_products
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/top_selling_products
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/top_selling_products
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_top_selling_products
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/top_selling_products
+  uuid: load_top_selling_products
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/top_selling_customers.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/top_selling_customers.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_top_selling_customers
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/top_selling_customers
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/top_selling_customers
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_top_selling_customers
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/top_selling_customers
+  uuid: load_top_selling_customers
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/sales_trends_monthly.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/sales_trends_monthly.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_sales_trend_monthly
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/sales_trends_monthly
+  retry_config: null
+  status: updated
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/sales_trends_monthly
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_sales_trend_monthly
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/sales_trends_monthly
+  uuid: load_sales_trend_monthly
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/sales_trends_quarterly.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/sales_trends_quarterly.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_sales_trends_quarterly
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/sales_trends_quarterly
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/sales_trends_quarterly
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_sales_trends_quarterly
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/sales_trends_quarterly
+  uuid: load_sales_trends_quarterly
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/average_sales_per_weather.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/average_sales_per_weather.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_average_sales_per_weather
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/average_sales_per_weather
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/average_sales_per_weather
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_average_sales_per_weather
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/average_sales_per_weather
+  uuid: load_average_sales_per_weather
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/likely_to_be_ordered_again_products.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/likely_to_be_ordered_again_products.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load__likely_to_be_ordered_again_products
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/likely_to_be_ordered_again_products
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/likely_to_be_ordered_again_products
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_ likely_to_be_ordered_again_products
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/likely_to_be_ordered_again_products
+  uuid: load__likely_to_be_ordered_again_products
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/customer_spend_over_time.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/customer_spend_over_time.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load_customer_spend_over_time
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/customer_spend_over_time
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/customer_spend_over_time
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_customer_spend_over_time
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/customer_spend_over_time
+  uuid: load_customer_spend_over_time
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/visualization/city_product_sales_summary.sql
+    file_source:
+      path: dbt/demo/models/sales/visualization/city_product_sales_summary.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - load__city_product_sales_summary
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/visualization/city_product_sales_summary
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/demo/models/sales/visualization/city_product_sales_summary
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_ city_product_sales_summary
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - dbt/demo/models/sales/visualization/city_product_sales_summary
+  uuid: load__city_product_sales_summary
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-03-02 12:22:19.704731+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: sales_reporting_and_visualization
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: sales_reporting_and_visualization
+variables_dir: /home/src/mage_data/src
+widgets: []

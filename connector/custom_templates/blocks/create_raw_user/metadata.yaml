@@ -1,0 +1,9 @@
+block_type: dbt
+color: null
+configuration: null
+description: null
+language: sql
+name: null
+pipeline: {}
+tags: []
+user: {}

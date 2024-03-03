@@ -1,0 +1,56 @@
+models:
+  - name: fact_sales
+    description: "An incremental model that joins sales data with user and weather snapshots."
+    config:
+      materialized: 'incremental'
+      unique_key: 'sale_id'
+    columns:
+      - name: sale_id
+        description: "The unique identifier for each sale."
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "The unique identifier for each sale order."
+        tests:
+          - not_null
+      - name: customer_id
+        description: "The unique identifier for the customer involved in the sale."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_user')
+              field: user_id
+      - name: product_id
+        description: "The unique identifier for the product sold."
+        tests:
+          - not_null
+      - name: weather_id
+        description: "A surrogate key linking to the weather conditions at the time of the sale."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_weather')
+              field: weather_id
+      - name: order_date
+        description: "The date when the order was placed."
+        tests:
+          - not_null
+      - name: quantity
+        description: "The quantity of the product sold."
+        tests:
+          - not_null
+      - name: price
+        description: "The price of the product for the sale."
+        tests:
+          - not_null
+      - name: city
+        description: The city of the customer involved in the sale.
+        tests:
+          - not_null
+      - name: weather_temperature
+        description: "The recorded temperature."
+      - name: weather_conditions
+        description: "The recorded weather conditions."
+        tests:
+          - not_null

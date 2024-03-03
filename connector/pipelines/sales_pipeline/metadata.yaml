@@ -1,0 +1,555 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for sales_pipeline
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_sales_pipeline
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for load_sales_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_load_sales_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - dbt/demo/models/sales/staging/raw_sale
+  - archive_sales_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_sales_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_sales_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for archive_sales_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_archive_sales_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: archive_sales_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_sales_data
+  uuid: archive_sales_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for dbt/demo/models/sales/staging/raw_sale
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_dbt/demo/models/sales/staging/raw_sale
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt:
+      disable_tests: false
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/staging/raw_sale.sql
+    file_source:
+      path: dbt/demo/models/sales/staging/raw_sale.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - dbt/demo/models/sales/fact_sales
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/staging/raw_sale
+  retry_config: {}
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - load_sales_data
+  uuid: dbt/demo/models/sales/staging/raw_sale
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for load_user_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_load_user_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - prepare_weather_data
+  - dbt/demo/models/sales/staging/raw_user
+  - archive_user_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_user_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_user_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for archive_user_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_archive_user_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: archive_user_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_user_data
+  uuid: archive_user_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for dbt/demo/models/sales/staging/raw_user
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_dbt/demo/models/sales/staging/raw_user
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/staging/raw_user.sql
+    file_source:
+      path: dbt/demo/models/sales/staging/raw_user.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - dim_user
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/staging/raw_user
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - load_user_data
+  uuid: dbt/demo/models/sales/staging/raw_user
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for dim_user
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_dim_user
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt:
+      command: snapshot
+    dbt_profile_target: dev
+    dbt_project_name: dbt/demo
+    disable_query_preprocessing: false
+    export_write_policy: append
+    file_source:
+      path: dbts/dim_user.yaml
+    use_raw_sql: false
+  downstream_blocks:
+  - dbt/demo/models/sales/fact_sales
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: dim_user
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - dbt/demo/models/sales/staging/raw_user
+  uuid: dim_user
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for prepare_weather_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_prepare_weather_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - dbt/demo/models/sales/staging/raw_weather
+  - archive_weather_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: prepare_weather_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_user_data
+  uuid: prepare_weather_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for archive_weather_data
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_archive_weather_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: archive_weather_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - prepare_weather_data
+  uuid: archive_weather_data
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for dbt/demo/models/sales/staging/raw_weather
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_dbt/demo/models/sales/staging/raw_weather
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/staging/raw_weather.sql
+    file_source:
+      path: dbt/demo/models/sales/staging/raw_weather.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - dim_weather_snapshot
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/staging/raw_weather
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - prepare_weather_data
+  uuid: dbt/demo/models/sales/staging/raw_weather
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for dim_weather_snapshot
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_dim_weather_snapshot
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt:
+      command: snapshot
+    dbt_profile_target: dev
+    dbt_project_name: dbt/demo
+    disable_query_preprocessing: false
+    export_write_policy: append
+    file_source:
+      path: dbts/dim_weather_snapshot.yaml
+    use_raw_sql: false
+  downstream_blocks:
+  - dbt/demo/models/sales/fact_sales
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: dim_weather_snapshot
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - dbt/demo/models/sales/staging/raw_weather
+  uuid: dim_weather_snapshot
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for dbt/demo/models/sales/fact_sales
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_dbt/demo/models/sales/fact_sales
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_project_name: dbt/demo
+    file_path: dbt/demo/models/sales/fact_sales.sql
+    file_source:
+      path: dbt/demo/models/sales/fact_sales.sql
+      project_path: dbt/demo
+    limit: 1000
+  downstream_blocks:
+  - data_quality_checks
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/demo/models/sales/fact_sales
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - dbt/demo/models/sales/staging/raw_sale
+  - dim_weather_snapshot
+  - dim_user
+  uuid: dbt/demo/models/sales/fact_sales
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for data_quality_checks
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_data_quality_checks
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt:
+      command: test
+    dbt_profile_target: dev
+    dbt_project_name: dbt/demo
+    disable_query_preprocessing: false
+    export_write_policy: append
+    file_source:
+      path: dbts/data_quality_checks.yaml
+    use_raw_sql: false
+  downstream_blocks:
+  - create_data_documentation
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: data_quality_checks
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - dbt/demo/models/sales/fact_sales
+  uuid: data_quality_checks
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: Documentation for create_data_documentation
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: documentation_for_create_data_documentation
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt:
+      command: docs
+    dbt_profile_target: dev
+    dbt_project_name: dbt/demo
+    disable_query_preprocessing: false
+    export_write_policy: append
+    file_source:
+      path: dbts/create_data_documentation.yaml
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: create_data_documentation
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - data_quality_checks
+  uuid: create_data_documentation
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-03-01 10:24:30.959353+00:00'
+data_integration: null
+description: 'the code.
+
+
+  Overall, the yaml configuration is a useful tool for generating clear and concise
+  documentation for code snippets, making it easier for developers to understand and
+  use the code.'
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: sales_pipeline
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: sales_pipeline
+variables_dir: /home/src/mage_data/src
+widgets: []

@@ -1,0 +1,69 @@
+version: 2
+
+snapshots:
+  - name: dim_user
+    description: "A snapshot of user data."
+    target_schema: snapshots
+    unique_key: user_id
+    strategy: check
+    check_cols:
+      - user_id
+    columns:
+      - name: user_id
+        description: "The unique identifier for a user."
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "The name of the user."
+      - name: username
+        description: "The username of the user."
+        tests:
+          - not_null
+      - name: email
+        description: "The email of the user."
+        tests:
+          - not_null
+      - name: lat
+        description: "The latitude part of the user's address."
+        tests:
+          - not_null
+      - name: lng
+        description: "The longitude part of the user's address."
+        tests:
+          - not_null
+      - name: city
+        description: "The city part of the user's address."
+        tests:
+          - not_null
+
+  - name: dim_weather
+    description: "A snapshot of weather data."
+    target_schema: snapshots
+    unique_key: weather_id
+    strategy: check
+    check_cols:
+      - weather_lat
+      - weather_lng
+    columns:
+      - name: weather_id
+        description: "The unique identifier for a weather record."
+        tests:
+          - not_null
+          - unique
+      - name: weather_date
+        description: "The date of the weather record."
+      - name: weather_lat
+        description: "The latitude for the weather record."
+        tests:
+          - not_null
+      - name: weather_lng
+        description: "The longitude for the weather record."
+        tests:
+          - not_null
+      - name: weather_temperature
+        description: "The temperature recorded."
+      - name: weather_conditions
+        description: "The weather conditions recorded."
+        tests:
+          - not_null

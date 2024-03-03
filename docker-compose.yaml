@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    restart: on-failure
+    container_name: postgres-magic
+    build:
+      context: ./db
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${PG_HOST_PORT}:5432"
+
+  mage:
+    image: sales_pipeline:latest
+    container_name: sales_pipeline
+    depends_on:
+      - postgres
+    build:
+      context: ./connector
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres-magic
+      SERVER_LOGGING_FORMAT: json
+      MAGE_DATABASE_CONNECTION_URL: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres-magic:5432/${POSTGRES_DB}
+    ports:
+      - 6789:6789
+    volumes:
+      - ./connector:/home/src/
+    restart: on-failure:5
+
+  db:
+    image: dbt:latest
+    container_name: dbt
+    build:
+      context: ./connector/dbt
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - 8001:8001
