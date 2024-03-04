@@ -109,6 +109,15 @@ This project involves constructing an advanced sales data pipeline for a retail 
   #### Sales Reporting and Visualizations Pipeline
     - How to run the pipeline
 
+        To run the sales reporting and visualization pipeline, adhere to the following steps within the Sales Pipeline interface:
+
+        1. From the menu located in the left corner, select **Pipelines**.
+        2. Identify and click on the `sales_reporting_and_visualization` pipeline.
+        3. Initiate the pipeline by pressing **Run@once** and then confirm with **Run now**.
+        4. To observe the execution details and review logs, click on the recently generated run instance.
+
+    - How to check the Dashboard
+
       <h1 align="center">
         <a
           target="_blank"
