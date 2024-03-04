@@ -258,6 +258,20 @@ This project involves constructing an advanced sales data pipeline for a retail 
 
   These dbt tests are part of our automated data validation procedures that run as part of the pipeline's workflow. This proactive approach to data quality helps prevent the propagation of errors and ensures that any issues are identified and resolved promptly, maintaining the overall health of our data ecosystem.
 
+  ### Data Versioning and Archiving
+
+  Our data management strategy incorporates a systematic approach to versioning and archiving. This ensures we maintain a comprehensive historical record of our datasets, which is crucial for retrospective analysis, auditing, and data recovery.
+
+  For each dataset, including users, weather, and sales data, we generate timestamped files following a consistent naming convention that incorporates the date and time of the data snapshot. These files are then stored in a structured repository, organized into dedicated subfolders for each data category.
+
+  The archiving process is automated, with each new pipeline execution creating a directory—if it does not already exist—and saving the current data extract as a CSV file. This file is named using the pattern `YYYY-MM-DD-HH.csv`, representing the year, month, day, and hour of the data loaded.
+
+  The benefits of this archiving process are multifold:
+
+  - **Historical Integrity**: By having a timestamped record of data, we can trace the evolution of our datasets and understand the historical context of our analytics.
+  - **Audit Trail**: The versioned files serve as an audit trail for all changes, fulfilling compliance and governance requirements.
+  - **Data Recovery**: In case of data loss or corruption, we can revert to a previous version of the data, ensuring business continuity.
+
 ### Data Documentation
 
   We use `dbt docs generate` to create an accessible documentation site that details our data models, enhancing understanding and navigation for the `sales_pipeline`. This interactive documentation allows for model searches, SQL code reviews, and insight into data structure through visual lineage charts. The process, which can be executed within our pipeline, results in transparent, collaborative, and well-governed data operations.
